@@ -1,0 +1,79 @@
+\documentclass[12pt,a4paper]{report}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{makeidx}
+\usepackage{graphicx}
+\usepackage{listings}
+\usepackage{mparhack}
+\usepackage{hyperref}
+%\usepackage[a4paper]{geometry}
+\usepackage[left=2.80cm, right=3.80cm, top=2.00cm, bottom=2.00cm]{geometry}
+\newcommand{\nota}[2]{%
+	\marginpar[{\raggedleft\tiny\sffamily #1\\}]{%
+		{\raggedright\tiny\sffamily #1\\}}}
+	\marginparwidth = 74pt
+	\marginparsep = 21pt
+\author{Salvo D'Asta}
+\title{Appunti docker}
+\makeindex
+
+
+
+\begin{document}
+	\maketitle
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.7\linewidth]{docker-11}
+	\caption[docker]{}
+\end{figure}
+
+\tableofcontents
+\chapter{Cosa è Docker?}
+Si tratta di una tecnologia per la distribuzione (\textit{deployment}) di servizi software.
+\chapter{differenze tra virtualizzazione e "containerizzazione"}
+Il sistema "\textbf{Bare metal}" cioè basato sull'hardware \textit{fisico} della macchina\\
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.7\linewidth]{"Schermata a 2021-02-27 08-27-43"}
+	\caption{}
+	\label{fig:schermata-a-2021-02-27-08-27-43}
+\end{figure}
+Il sistema basato sulla virtualizzazione della macchina (virtualbox, wmware etc.)
+\begin{figure}[p]
+	\centering
+	\includegraphics[width=0.7\linewidth]{"Schermata a 2021-02-27 08-31-37"}
+	\caption{}
+	\label{fig:schermata-a-2021-02-27-08-31-37}
+\end{figure}\\
+\begin{figure}[!]
+	\centering
+	\includegraphics[width=0.7\linewidth]{"Schermata a 2021-02-27 08-33-02"}
+	\caption{}
+	\label{fig:schermata-a-2021-02-27-08-33-02}
+\end{figure}
+
+
+
+
+
+  
+\chapter{primo uso}	
+
+	\section{Installazione}
+	\subsection{Con apt-get install}
+	
+	\verb|sudo apt-get install docker.io|
+	\section{rimuovere i doker file e le immagini}
+	\verb|docker system prune|
+	\section{creazione ed avvio di un container}
+	\verb|docker container run nginx|\\
+	Se l'immagine di \verb|ngnix| non si trova in locale, la scarica automaticamente dal \textit{regitry}  
+	\section{Elenco dei container attivi e di quelli non attivi}
+	\verb|docker container ls| (solo quelli attivi)\\
+	\verb|docker container ls -a| (anche quelli inattivi)
+	
+%	\nota{{{\textbf{Filtro passa basso}:}}}
+	
+\end{document}

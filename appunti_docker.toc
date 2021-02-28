@@ -1,0 +1,8 @@
+\contentsline {chapter}{\numberline {1}Cosa \IeC {\`e} Docker?}{3}{chapter.1}
+\contentsline {chapter}{\numberline {2}differenze tra virtualizzazione e "containerizzazione"}{4}{chapter.2}
+\contentsline {chapter}{\numberline {3}primo uso}{6}{chapter.3}
+\contentsline {section}{\numberline {3.1}Installazione}{6}{section.3.1}
+\contentsline {subsection}{\numberline {3.1.1}Con apt-get install}{6}{subsection.3.1.1}
+\contentsline {section}{\numberline {3.2}rimuovere i doker file e le immagini}{6}{section.3.2}
+\contentsline {section}{\numberline {3.3}creazione ed avvio di un container}{6}{section.3.3}
+\contentsline {section}{\numberline {3.4}Elenco dei container attivi e di quelli non attivi}{6}{section.3.4}

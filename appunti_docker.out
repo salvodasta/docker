@@ -1,0 +1,8 @@
+\BOOKMARK [0][-]{chapter.1}{Cosa \350 Docker?}{}% 1
+\BOOKMARK [0][-]{chapter.2}{differenze tra virtualizzazione e "containerizzazione"}{}% 2
+\BOOKMARK [0][-]{chapter.3}{primo uso}{}% 3
+\BOOKMARK [1][-]{section.3.1}{Installazione}{chapter.3}% 4
+\BOOKMARK [2][-]{subsection.3.1.1}{Con apt-get install}{section.3.1}% 5
+\BOOKMARK [1][-]{section.3.2}{rimuovere i doker file e le immagini}{chapter.3}% 6
+\BOOKMARK [1][-]{section.3.3}{creazione ed avvio di un container}{chapter.3}% 7
+\BOOKMARK [1][-]{section.3.4}{Elenco dei container attivi e di quelli non attivi}{chapter.3}% 8
