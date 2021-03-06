@@ -1,8 +1,12 @@
-\BOOKMARK [0][-]{chapter.1}{Cosa \350 Docker?}{}% 1
-\BOOKMARK [0][-]{chapter.2}{differenze tra virtualizzazione e "containerizzazione"}{}% 2
-\BOOKMARK [0][-]{chapter.3}{primo uso}{}% 3
-\BOOKMARK [1][-]{section.3.1}{Installazione}{chapter.3}% 4
-\BOOKMARK [2][-]{subsection.3.1.1}{Con apt-get install}{section.3.1}% 5
-\BOOKMARK [1][-]{section.3.2}{rimuovere i doker file e le immagini}{chapter.3}% 6
-\BOOKMARK [1][-]{section.3.3}{creazione ed avvio di un container}{chapter.3}% 7
-\BOOKMARK [1][-]{section.3.4}{Elenco dei container attivi e di quelli non attivi}{chapter.3}% 8
+\BOOKMARK [1][-]{section.0.1}{Installazione}{}% 1
+\BOOKMARK [2][-]{subsection.0.1.1}{Con apt-get install}{section.0.1}% 2
+\BOOKMARK [1][-]{section.0.2}{scaricare un immagine da Docker HUB}{}% 3
+\BOOKMARK [1][-]{section.0.3}{visualizzare l'elenco delle immagini visualizzate}{}% 4
+\BOOKMARK [1][-]{section.0.4}{creare ed eseguire un container}{}% 5
+\BOOKMARK [1][-]{section.0.5}{visualizzare l'elenco dei container}{}% 6
+\BOOKMARK [1][-]{section.0.6}{eseguire un comando all'interno di un container}{}% 7
+\BOOKMARK [1][-]{section.0.7}{Eliminazione di un container o di una immagine}{}% 8
+\BOOKMARK [1][-]{section.0.8}{rimuovere i doker file e le immagini}{}% 9
+\BOOKMARK [1][-]{section.0.9}{creazione ed avvio di un container}{}% 10
+\BOOKMARK [1][-]{section.0.10}{Elenco dei container attivi e di quelli non attivi}{}% 11
+\BOOKMARK [1][-]{section.0.11}{Installazione su Raspberry Pi con Moodlebox}{}% 12

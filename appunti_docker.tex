@@ -1,4 +1,4 @@
-\documentclass[12pt,a4paper]{report}
+\documentclass[10pt,a4paper]{report}
 \usepackage[utf8]{inputenc}
 \usepackage{amsmath}
 \usepackage{amsfonts}
@@ -9,48 +9,45 @@
 \usepackage{mparhack}
 \usepackage{hyperref}
 %\usepackage[a4paper]{geometry}
-\usepackage[left=2.80cm, right=3.80cm, top=2.00cm, bottom=2.00cm]{geometry}
+\usepackage[left=0.80cm, right=0.80cm, top=1.80cm, bottom=1.50cm]{geometry}
 \newcommand{\nota}[2]{%
 	\marginpar[{\raggedleft\tiny\sffamily #1\\}]{%
 		{\raggedright\tiny\sffamily #1\\}}}
 	\marginparwidth = 74pt
 	\marginparsep = 21pt
 \author{Salvo D'Asta}
-\title{Appunti docker}
+\title{Appunti incompleti su docker}
+
 \makeindex
 
 
 
 \begin{document}
+	
 	\maketitle
-\begin{figure}[h]
-	\centering
-	\includegraphics[width=0.7\linewidth]{docker-11}
-	\caption[docker]{}
-\end{figure}
-
+%	\begin{abstract}
+%		Appunti incompleti su docker. 
+%	\end{abstract}
 \tableofcontents
-\chapter{Cosa è Docker?}
+\section*{Cosa è Docker?}
 Si tratta di una tecnologia per la distribuzione (\textit{deployment}) di servizi software.
-\chapter{differenze tra virtualizzazione e "containerizzazione"}
-Il sistema "\textbf{Bare metal}" cioè basato sull'hardware \textit{fisico} della macchina\\
+differenze tra virtualizzazione e\\ "containerizzazione"
 \begin{figure}[h]
 	\centering
-	\includegraphics[width=0.7\linewidth]{"Schermata a 2021-02-27 08-27-43"}
-	\caption{}
+	\includegraphics[width=0.3\linewidth]{"Schermata a 2021-02-27 08-27-43"}
+	\caption{Il sistema "\textbf{Bare metal}" cioè basato sull'hardware \textit{fisico} della macchina}
 	\label{fig:schermata-a-2021-02-27-08-27-43}
 \end{figure}
-Il sistema basato sulla virtualizzazione della macchina (virtualbox, wmware etc.)
-\begin{figure}[p]
+\begin{figure}[h]
 	\centering
-	\includegraphics[width=0.7\linewidth]{"Schermata a 2021-02-27 08-31-37"}
-	\caption{}
+	\includegraphics[width=0.3\linewidth]{"Schermata a 2021-02-27 08-31-37"}
+	\caption{Il sistema basato sulla virtualizzazione della macchina (virtualbox, wmware etc.)}
 	\label{fig:schermata-a-2021-02-27-08-31-37}
-\end{figure}\\
-\begin{figure}[!]
+\end{figure}
+\begin{figure}[h]
 	\centering
-	\includegraphics[width=0.7\linewidth]{"Schermata a 2021-02-27 08-33-02"}
-	\caption{}
+	\includegraphics[width=0.3\linewidth]{"Schermata a 2021-02-27 08-33-02"}
+	\caption{Il sistema basato su docker}
 	\label{fig:schermata-a-2021-02-27-08-33-02}
 \end{figure}
 
@@ -59,12 +56,43 @@ Il sistema basato sulla virtualizzazione della macchina (virtualbox, wmware etc.
 
 
   
-\chapter{primo uso}	
+\section*{Istruzioni di base}	
 
 	\section{Installazione}
 	\subsection{Con apt-get install}
 	
 	\verb|sudo apt-get install docker.io|
+	\section{scaricare un immagine da Docker HUB}
+	Collegarsi al sito \textit{https://dockerhub.com} 
+	nella sezione \textit{Explore} cercare l'immagine desiderata  e seguire le istruzioni.
+	da terminale digitare:\\
+	\verb|docker pull <nome immagine>|
+	\section{visualizzare l'elenco delle immagini visualizzate}
+    \verb|docker images|
+	\section{creare ed eseguire un container}
+	\verb|docker run -dit --name <nome container>|
+	esempio di esecuzione di un server apache:\\
+	\verb|docker run -dit --name miocontainer -p 8087:80 -v "/home/pi/classe5D/":/usr/local/apache2/htdocs/ httpd:2.4| 
+	\section{visualizzare l'elenco dei container}
+	per visualizzare solo i container in esecuzione:\\
+	\verb|docker container ls|\\
+	per visualizzare anche quelli non attivi:\\
+	\verb|docker container ls -a|
+	\section{eseguire un comando all'interno di un container}
+	\verb|docker exec -it <nome container> <comando>|\\esempio di esecuzione di una shell bash all'interno di un container:\\
+	\verb|docker exec -it miohttpd bash | 
+	\section{Eliminazione di un container o di una immagine}
+	Dopo aver controllato l'elenco dei container:
+	\begin{verbatim}
+	docker container ls -a
+	CONTAINER ID   IMAGE                    COMMAND          CREATED        STATUS       PORTS   NAMES
+	d3be21917f8a   portainer/portainer      "/portainer"     3 days ago     Created              lucid_liskov
+	6583875c0997   ubuntu                   "/bin/bash"      7 days ago     Exited (0)           mioubuntu
+	\end{verbatim}
+	per eliminare il container \textit{mioubuntu}:\\
+	\verb|docker rm 6583| (non è necessario inserire tutto l'hash)\\
+	per eliminare le immagini sostituire il comando \verb|rm| con \verb|rmi| ed inserire i primi numeri dell'hash dell'immagine.
+	
 	\section{rimuovere i doker file e le immagini}
 	\verb|docker system prune|
 	\section{creazione ed avvio di un container}
@@ -75,5 +103,32 @@ Il sistema basato sulla virtualizzazione della macchina (virtualbox, wmware etc.
 	\verb|docker container ls -a| (anche quelli inattivi)
 	
 %	\nota{{{\textbf{Filtro passa basso}:}}}
+\section{Installazione su Raspberry Pi con Moodlebox}
+\verb|ssh moodlebox@moodlebox.home|	\\
+\verb|sudo apt-get install docker.io|\\
+\verb|sudo apt-get install -y --no-install-recommends \|\\
+\verb|apt-transport-https \|\\
+\verb|ca-certificates \|\\
+\verb|curl \|\\
+\verb|software-properties-common|\\\\
+\verb|curl -fsSL https://apt.dockerproject.org/gpg | sudo apt-key add -|
+\\\\
+root@raspberrypi:/home/pi\# docker images\\
+	REPOSITORY          TAG       IMAGE ID       CREATED       SIZE\\
+	httpd               latest    d8c0ac39cbcb   2 weeks ago   107MB\\
+	armhf/hello-world   latest    d40384c3f861   4 years ago   1.64kB\\
+	\\\\
+	 docker run -itd --name mio-httpd:latest -p 8080:80 httpd:latest
+	\\\\
+	root@raspberrypi:/home/pi\# docker exec -it mio-httpd  bash\\
+	root@f2ca72141b9e:/usr/local/apache2\#
+	\\
+	\\
+	cat>index.html\\
+	<h1> Container httpd in esecuzione su raspberry pi4 4GB <\/h1>\\
+	\^Z
+	[1]+  Stopped                 cat > index.html\\
+	 
 	
+
 \end{document}
