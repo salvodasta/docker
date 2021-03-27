@@ -9,4 +9,10 @@
 \contentsline {section}{\numberline {0.8}rimuovere i doker file e le immagini}{3}{section.0.8}
 \contentsline {section}{\numberline {0.9}creazione ed avvio di un container}{3}{section.0.9}
 \contentsline {section}{\numberline {0.10}Elenco dei container attivi e di quelli non attivi}{3}{section.0.10}
-\contentsline {section}{\numberline {0.11}Installazione su Raspberry Pi con Moodlebox}{3}{section.0.11}
+\contentsline {section}{\numberline {0.11}Creazione di una immagine a partire da un container}{3}{section.0.11}
+\contentsline {section}{\numberline {0.12}Creazione di un'immagine con DockerFile}{3}{section.0.12}
+\contentsline {section}{\numberline {0.13}creazione di una network}{3}{section.0.13}
+\contentsline {section}{\numberline {0.14}Esempio creazione container mysql}{3}{section.0.14}
+\contentsline {subsection}{\numberline {0.14.1}creazione del container}{3}{subsection.0.14.1}
+\contentsline {subsection}{\numberline {0.14.2}creazione dell'utente remoto}{4}{subsection.0.14.2}
+\contentsline {section}{\numberline {0.15}Installazione su Raspberry Pi con Moodlebox}{4}{section.0.15}

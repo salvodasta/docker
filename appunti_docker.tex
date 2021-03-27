@@ -24,10 +24,16 @@
 
 \begin{document}
 	
+
+	
 	\maketitle
+	
+	
 %	\begin{abstract}
 %		Appunti incompleti su docker. 
 %	\end{abstract}
+
+
 \tableofcontents
 \section*{Cosa è Docker?}
 Si tratta di una tecnologia per la distribuzione (\textit{deployment}) di servizi software.
@@ -40,13 +46,13 @@ differenze tra virtualizzazione e\\ "containerizzazione"
 \end{figure}
 \begin{figure}[h]
 	\centering
-	\includegraphics[width=0.3\linewidth]{"Schermata a 2021-02-27 08-31-37"}
+	\includegraphics[width=0.2\linewidth]{"Schermata a 2021-02-27 08-31-37"}
 	\caption{Il sistema basato sulla virtualizzazione della macchina (virtualbox, wmware etc.)}
 	\label{fig:schermata-a-2021-02-27-08-31-37}
 \end{figure}
 \begin{figure}[h]
 	\centering
-	\includegraphics[width=0.3\linewidth]{"Schermata a 2021-02-27 08-33-02"}
+	\includegraphics[width=0.2\linewidth]{"Schermata a 2021-02-27 08-33-02"}
 	\caption{Il sistema basato su docker}
 	\label{fig:schermata-a-2021-02-27-08-33-02}
 \end{figure}
@@ -55,6 +61,7 @@ differenze tra virtualizzazione e\\ "containerizzazione"
 
 
 
+\pagebreak
   
 \section*{Istruzioni di base}	
 
@@ -101,6 +108,34 @@ differenze tra virtualizzazione e\\ "containerizzazione"
 	\section{Elenco dei container attivi e di quelli non attivi}
 	\verb|docker container ls| (solo quelli attivi)\\
 	\verb|docker container ls -a| (anche quelli inattivi)
+	\section{Creazione di una immagine a partire da un container}
+	\verb|docker container commit [OPTIONS] CONTAINER [REPOSITORY[:TAG]]|\\
+	esempio:\\ 
+	\verb|docker container commit <nome del container esistente>  <nome della nuova immagine:<eventuale TAG>>|//
+	Supponendo che dopo aver creato il container \verb|mioubuntu| ed aver apportato delle modifiche io voglia creare l'immagine \verb|MIO| allora il comando sarà:\\
+	\verb|docker container commit mioubuntu MIO|
+	\section{Creazione di un'immagine con DockerFile}
+	\begin{figure}[h]
+		\centering
+		\includegraphics[width=0.3\linewidth]{"Schermata a 2021-02-27 08-33-42"}
+		\caption{}
+		\label{fig:schermata-a-2021-02-27-08-33-42}
+	\end{figure}
+	
+	\section{creazione di una network}
+	da:\verb|docker network  --help|\\
+
+	
+	
+	\verb|docker network create --subnet=<indirizzo_ip/subnet> <nome della subnet>|
+	\section{Esempio creazione container mysql}
+	\subsection{creazione del container}
+	\verb|docker run --name some-mysql -e MYSQL_ROOT_PASSWORD=my-secret-pw -d mysql:tag|\\
+	\subsection{creazione dell'utente remoto}
+	\verb|docker exec some_mysql bash|\\
+	\verb| mysql -uroot -p|\\
+	\verb|CREATE USER 'salvo'@'%' IDENTIFIED BY 'proprietario';|\\
+	\verb|GRANT ALL PRIVILEGES ON mysql.* TO 'salvo'@'%';|\\
 	
 %	\nota{{{\textbf{Filtro passa basso}:}}}
 \section{Installazione su Raspberry Pi con Moodlebox}
